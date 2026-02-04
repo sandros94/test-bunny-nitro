@@ -1,25 +1,90 @@
 #app {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+.hero {
+  padding: 1.5rem 0 2rem;
+}
+
+.logo-row {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 5.25rem;
+  padding: 0.6rem;
+  display: block;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: translateY(-6px) scale(1.02);
+  filter: drop-shadow(0 8px 24px rgba(100,108,255,0.18));
 }
 .logo.preact:hover {
-  filter: drop-shadow(0 0 2em #673ab8aa);
+  filter: drop-shadow(0 8px 24px rgba(103,58,184,0.18));
+}
+
+.logo > .logo-label { }
+.logo-label {
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+}
+
+h1 {
+  margin: 0.25rem 0 0.25rem;
+}
+
+.tagline {
+  margin: 0.25rem 0 1rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
 }
 
 .card {
-  padding: 2em;
+  padding: 1.25rem;
+  background: rgba(0,0,0,0.18);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
-.read-the-docs {
-  color: #888;
+.muted {
+  color: rgba(255,255,255,0.65);
+  margin-top: 0.6rem;
+}
+
+.features ul {
+  text-align: left;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.site-footer {
+  margin-top: 1.5rem;
+  color: rgba(255,255,255,0.6);
+}
+
+@media (prefers-color-scheme: light) {
+  .card {
+    background: #f7f8fb;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .logo-label { color: #23323d; }
+  .tagline { color: #405560; }
+  .muted { color: #55636f; }
 }
