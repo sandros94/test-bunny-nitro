@@ -32,7 +32,7 @@ export function App() {
             <button type="button" onClick={() => setCount((c) => c + 1)}>
               count is {count}
             </button>
-            <p class="muted">Edit <code>app/app.tsx</code> and save to test HMR</p>
+            <p class="muted">Test client state</p>
           </div>
 
           <div class="card">
