@@ -45,6 +45,21 @@ export function App() {
             </button>
             <p class="muted">Simple server endpoint returning a greeting</p>
           </div>
+
+          <div class="card">
+            <button type="button" onClick={async () => {
+              const res = await fetch('/api/test', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ echo: 'Hello from client!' }),
+              })
+              const data = await res.json()
+              alert(JSON.stringify(data.echoed))
+            }}>
+              Call /api/test
+            </button>
+            <p class="muted">Server endpoint echoing back the sent message</p>
+          </div>
         </section>
 
         <section class="features card">

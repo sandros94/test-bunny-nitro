@@ -6,6 +6,7 @@
     "npm:nitro@^3.0.1-alpha.2": "3.0.1-alpha.2_vite@7.3.1__picomatch@4.0.3__jiti@2.6.1_srvx@0.10.1_crossws@0.4.4__srvx@0.10.1_db0@0.3.4_ofetch@2.0.0-alpha.3_jiti@2.6.1",
     "npm:preact@^10.28.2": "10.28.3",
     "npm:rolldown-vite@7.2.5": "7.2.5_picomatch@4.0.3",
+    "npm:valibot@^1.2.0": "1.2.0",
     "npm:vite@*": "7.3.1_picomatch@4.0.3_jiti@2.6.1"
   },
   "npm": {
@@ -1381,6 +1382,9 @@
       ],
       "bin": true
     },
+    "valibot@1.2.0": {
+      "integrity": "sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg=="
+    },
     "vite-prerender-plugin@0.5.12_vite@7.3.1__picomatch@4.0.3__jiti@2.6.1": {
       "integrity": "sha512-EiwhbMn+flg14EysbLTmZSzq8NGTxhytgK3bf4aGRF1evWLGwZiHiUJ1KZDvbxgKbMf2pG6fJWGEa3UZXOnR1g==",
       "dependencies": [
@@ -1441,7 +1445,8 @@
       "npm:@preact/preset-vite@^2.10.3",
       "npm:nitro@^3.0.1-alpha.2",
       "npm:preact@^10.28.2",
-      "npm:rolldown-vite@7.2.5"
+      "npm:rolldown-vite@7.2.5",
+      "npm:valibot@^1.2.0"
     ]
   }
 }
