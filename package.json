@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "vite build",
-    "build:nitro": "nitro build"
+    "build:nitro": "nitro build",
+    "dev": "vite"
   },
   "dependencies": {
     "nitro": "https://pkg.pr.new/nitrojs/nitro@4005",
