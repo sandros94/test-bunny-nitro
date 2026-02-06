@@ -1,15 +1,20 @@
 import { defineConfig } from 'vite'
-import deno from '@deno/vite-plugin'
 import preact from '@preact/preset-vite'
 import { nitro } from 'nitro/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    deno(),
     preact(),
     nitro({
       serverDir: './server',
+      preset: 'deno-server',
+      // rolldownConfig: {
+      //   output: {
+      //     format: 'esm',
+      //   },
+      //   external: ['h3', 'valibot'],
+      // },
     }),
   ],
 })
