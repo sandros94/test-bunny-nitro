@@ -1,5 +1,6 @@
 import { useState } from 'preact/hooks'
 import './app.css'
+import { WebSocketDemo } from './WebSocketDemo'
 
 export function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,7 @@ export function App() {
             <img src="/vite.svg" class="logo" alt="Vite logo" />
             <div class="logo-label">Vite</div>
           </a>
-          <a href="https://nitro.build" target="_blank">
+          <a href="https://v3.nitro.build" target="_blank">
             <img src="/nitro.svg" class="logo" alt="Nitro logo" />
             <div class="logo-label">Nitro</div>
           </a>
@@ -27,7 +28,7 @@ export function App() {
       </header>
 
       <main>
-        <section class="controls">
+        <section class="demo-grid">
           <div class="card">
             <button type="button" onClick={() => setCount((c) => c + 1)}>
               count is {count}
@@ -62,12 +63,17 @@ export function App() {
           </div>
         </section>
 
+        <section class="card ws-section">
+          <WebSocketDemo />
+        </section>
+
         <section class="features card">
           <h2>Try these</h2>
           <ul>
             <li>Click the logos to open their docs</li>
             <li>Increment the counter to exercise client state and HMR</li>
             <li>Call <code>/api/hello</code> to test a server response</li>
+            <li>Use the WebSocket chat to test real-time bidirectional communication</li>
           </ul>
         </section>
       </main>

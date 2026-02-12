@@ -48,12 +48,16 @@ h1 {
   color: rgba(255,255,255,0.7);
 }
 
-.controls {
+.demo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  align-items: start;
-  margin-bottom: 1rem;
+  align-items: stretch;
+  margin-bottom: 1.5rem;
+}
+
+.ws-section {
+  margin-bottom: 1.5rem;
 }
 
 .card {

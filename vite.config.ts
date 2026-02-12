@@ -9,10 +9,7 @@ export default defineConfig({
   plugins: [
     preact(),
     tw(),
-    nitro({
-      serverDir: './server',
-      preset: './preset/bunny.ts',
-    }),
+    nitro(),
   ],
   environments: {
     client: {

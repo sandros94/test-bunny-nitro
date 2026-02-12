@@ -10,7 +10,7 @@ importers:
     dependencies:
       valibot:
         specifier: ^1.2.0
-        version: 1.2.0
+        version: 1.2.0(typescript@5.9.3)
     devDependencies:
       '@preact/preset-vite':
         specifier: ^2.10.3
@@ -18,6 +18,12 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.18
         version: 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
+      crossws:
+        specifier: ^0.4.4
+        version: 0.4.4(srvx@0.11.4)
+      h3:
+        specifier: 2.0.1-rc.14
+        version: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.4))
       nitro:
         specifier: https://pkg.pr.new/nitrojs/nitro@4005
         version: https://pkg.pr.new/nitrojs/nitro@4005(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
@@ -27,9 +33,15 @@ importers:
       preact-render-to-string:
         specifier: ^6.6.5
         version: 6.6.5(preact@10.28.3)
+      srvx:
+        specifier: ^0.11.4
+        version: 0.11.4
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
       vite:
         specifier: ^7.3.1
         version: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)
@@ -1097,8 +1109,8 @@ packages:
     resolution: {integrity: sha512-i5uvt8C3ikiWeNZSVZNWcfZPItFQOsYTUAOkcUPGd8DqDy1uOUikjt5dG+uRlwyvR108Fb9DOd4GvXfT0N2/uQ==}
     engines: {node: '>= 12'}
 
-  srvx@0.11.2:
-    resolution: {integrity: sha512-u6NbjE84IJwm1XUnJ53WqylLTQ3BdWRw03lcjBNNeMBD+EFjkl0Cnw1RVaGSqRAo38pOHOPXJH30M6cuTINUxw==}
+  srvx@0.11.4:
+    resolution: {integrity: sha512-m/2p87bqWZ94xpRN06qNBwh0xq/D0dXajnvPDSHFqrTogxuTWYNP1UHz6Cf+oY7D+NPLY35TJAp4ESIKn0WArQ==}
     engines: {node: '>=20.16.0'}
     hasBin: true
 
@@ -1119,6 +1131,11 @@ packages:
 
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
 
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
@@ -1785,9 +1802,9 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  crossws@0.4.4(srvx@0.11.2):
+  crossws@0.4.4(srvx@0.11.4):
     optionalDependencies:
-      srvx: 0.11.2
+      srvx: 0.11.4
 
   css-select@5.2.2:
     dependencies:
@@ -1878,12 +1895,12 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  h3@2.0.1-rc.14(crossws@0.4.4(srvx@0.11.2)):
+  h3@2.0.1-rc.14(crossws@0.4.4(srvx@0.11.4)):
     dependencies:
       rou3: 0.7.12
-      srvx: 0.11.2
+      srvx: 0.11.4
     optionalDependencies:
-      crossws: 0.4.4(srvx@0.11.2)
+      crossws: 0.4.4(srvx@0.11.4)
 
   he@1.2.0: {}
 
@@ -2013,15 +2030,15 @@ snapshots:
   nitro@https://pkg.pr.new/nitrojs/nitro@4005(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)):
     dependencies:
       consola: 3.4.2
-      crossws: 0.4.4(srvx@0.11.2)
+      crossws: 0.4.4(srvx@0.11.4)
       db0: 0.3.4
-      h3: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.2))
+      h3: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.4))
       jiti: 2.6.1
       nf3: 0.3.9
       ofetch: 2.0.0-alpha.3
       ohash: 2.0.11
       rolldown: 1.0.0-rc.3
-      srvx: 0.11.2
+      srvx: 0.11.4
       unenv: 2.0.0-rc.24
       unstorage: 2.0.0-alpha.5(db0@0.3.4)(ofetch@2.0.0-alpha.3)
     optionalDependencies:
@@ -2153,7 +2170,7 @@ snapshots:
 
   source-map@0.7.6: {}
 
-  srvx@0.11.2: {}
+  srvx@0.11.4: {}
 
   stack-trace@1.0.0-pre2: {}
 
@@ -2168,6 +2185,8 @@ snapshots:
 
   tslib@2.8.1:
     optional: true
+
+  typescript@5.9.3: {}
 
   undici-types@7.16.0:
     optional: true
@@ -2187,7 +2206,9 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  valibot@1.2.0: {}
+  valibot@1.2.0(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
 
   vite-prerender-plugin@0.5.12(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)):
     dependencies:
