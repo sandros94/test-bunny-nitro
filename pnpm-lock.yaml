@@ -20,13 +20,13 @@ importers:
         version: 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
       crossws:
         specifier: ^0.4.4
-        version: 0.4.4(srvx@0.11.4)
+        version: 0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)
       h3:
         specifier: 2.0.1-rc.14
-        version: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.4))
+        version: 2.0.1-rc.14(crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f))
       nitro:
-        specifier: https://pkg.pr.new/nitrojs/nitro@4005
-        version: https://pkg.pr.new/nitrojs/nitro@4005(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
+        specifier: https://pkg.pr.new/nitrojs/nitro@f663e76
+        version: https://pkg.pr.new/nitrojs/nitro@f663e76(jiti@2.6.1)(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
       preact:
         specifier: ^10.28.3
         version: 10.28.3
@@ -34,8 +34,8 @@ importers:
         specifier: ^6.6.5
         version: 6.6.5(preact@10.28.3)
       srvx:
-        specifier: ^0.11.4
-        version: 0.11.4
+        specifier: https://pkg.pr.new/h3js/srvx@1c4195f
+        version: https://pkg.pr.new/h3js/srvx@1c4195f
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
@@ -718,6 +718,7 @@ packages:
 
   crossws@0.4.4:
     resolution: {integrity: sha512-w6c4OdpRNnudVmcgr7brb/+/HmYjMQvYToO/oTrprTwxRUiom3LYWU1PMWuD006okbUWpII1Ea9/+kwpUfmyRg==}
+    version: 0.4.4
     peerDependencies:
       srvx: '>=0.7.1'
     peerDependenciesMeta:
@@ -826,6 +827,7 @@ packages:
 
   h3@2.0.1-rc.14:
     resolution: {integrity: sha512-163qbGmTr/9rqQRNuqMqtgXnOUAkE4KTdauiC9y0E5iG1I65kte9NyfWvZw5RTDMt6eY+DtyoNzrQ9wA2BfvGQ==}
+    version: 2.0.1-rc.14
     engines: {node: '>=20.11.1'}
     hasBin: true
     peerDependencies:
@@ -837,6 +839,9 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  hookable@6.0.1:
+    resolution: {integrity: sha512-uKGyY8BuzN/a5gvzvA+3FVWo0+wUjgtfSdnmjtrOVwQCZPHpHDH2WRO3VZSOeluYrHoDCiXFffZXs8Dj1ULWtw==}
 
   jiti@2.6.1:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
@@ -1020,19 +1025,28 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nf3@0.3.9:
-    resolution: {integrity: sha512-vgmoL6pUXpKXx+WepG4H1xc2nf1N/5vKgU9QerryuSFIyef8EDkj7esYcIgqMe/mE6nGsy6M6b8wfssEBQizVQ==}
+  nf3@0.3.10:
+    resolution: {integrity: sha512-UlqmHkZiHGgSkRj17yrOXEsSu5ECvtlJ3Xm1W5WsWrTKgu9m7OjrMZh9H/ME2LcWrTlMD0/vmmNVpyBG4yRdGg==}
 
-  nitro@https://pkg.pr.new/nitrojs/nitro@4005:
-    resolution: {tarball: https://pkg.pr.new/nitrojs/nitro@4005}
+  nitro@https://pkg.pr.new/nitrojs/nitro@f663e76:
+    resolution: {integrity: sha512-zyVD4wUn12fySBazCEv/WVjlGLpKm/Df9Clff+3fqJC3NLGprRdsbCcTBWhIl2P6AuHr/koNaDSpyEv+zeyzYg==, tarball: https://pkg.pr.new/nitrojs/nitro@f663e76}
     version: 3.0.1-alpha.2
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
-      rollup: ^4.57.0
+      dotenv: '*'
+      giget: '*'
+      jiti: ^2.6.1
+      rollup: ^4.57.1
       vite: ^7 || ^8 || >=8.0.0-0
       xml2js: ^0.6.2
     peerDependenciesMeta:
+      dotenv:
+        optional: true
+      giget:
+        optional: true
+      jiti:
+        optional: true
       rollup:
         optional: true
       vite:
@@ -1111,6 +1125,12 @@ packages:
 
   srvx@0.11.4:
     resolution: {integrity: sha512-m/2p87bqWZ94xpRN06qNBwh0xq/D0dXajnvPDSHFqrTogxuTWYNP1UHz6Cf+oY7D+NPLY35TJAp4ESIKn0WArQ==}
+    engines: {node: '>=20.16.0'}
+    hasBin: true
+
+  srvx@https://pkg.pr.new/h3js/srvx@1c4195f:
+    resolution: {integrity: sha512-OzLc5lxCBkaXgdeuRCIgsmfytsXMWixlLEQRMwjFyQyTHEr+lx9WfXzCKkE7DzqCtL3nda//6T2VVF/iAdFAXw==, tarball: https://pkg.pr.new/h3js/srvx@1c4195f}
+    version: 0.11.4
     engines: {node: '>=20.16.0'}
     hasBin: true
 
@@ -1802,9 +1822,9 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  crossws@0.4.4(srvx@0.11.4):
+  crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f):
     optionalDependencies:
-      srvx: 0.11.4
+      srvx: https://pkg.pr.new/h3js/srvx@1c4195f
 
   css-select@5.2.2:
     dependencies:
@@ -1895,14 +1915,16 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  h3@2.0.1-rc.14(crossws@0.4.4(srvx@0.11.4)):
+  h3@2.0.1-rc.14(crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)):
     dependencies:
       rou3: 0.7.12
       srvx: 0.11.4
     optionalDependencies:
-      crossws: 0.4.4(srvx@0.11.4)
+      crossws: 0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)
 
   he@1.2.0: {}
+
+  hookable@6.0.1: {}
 
   jiti@2.6.1: {}
 
@@ -2025,16 +2047,16 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nf3@0.3.9: {}
+  nf3@0.3.10: {}
 
-  nitro@https://pkg.pr.new/nitrojs/nitro@4005(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)):
+  nitro@https://pkg.pr.new/nitrojs/nitro@f663e76(jiti@2.6.1)(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)):
     dependencies:
       consola: 3.4.2
-      crossws: 0.4.4(srvx@0.11.4)
+      crossws: 0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)
       db0: 0.3.4
-      h3: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.4))
-      jiti: 2.6.1
-      nf3: 0.3.9
+      h3: 2.0.1-rc.14(crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f))
+      hookable: 6.0.1
+      nf3: 0.3.10
       ofetch: 2.0.0-alpha.3
       ohash: 2.0.11
       rolldown: 1.0.0-rc.3
@@ -2042,6 +2064,7 @@ snapshots:
       unenv: 2.0.0-rc.24
       unstorage: 2.0.0-alpha.5(db0@0.3.4)(ofetch@2.0.0-alpha.3)
     optionalDependencies:
+      jiti: 2.6.1
       rollup: 4.57.1
       vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)
     transitivePeerDependencies:
@@ -2171,6 +2194,8 @@ snapshots:
   source-map@0.7.6: {}
 
   srvx@0.11.4: {}
+
+  srvx@https://pkg.pr.new/h3js/srvx@1c4195f: {}
 
   stack-trace@1.0.0-pre2: {}
 

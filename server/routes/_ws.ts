@@ -1,8 +1,8 @@
 import { defineWebSocketHandler } from "nitro/h3";
 
 export default defineWebSocketHandler({
-  upgrade() {
-    console.log("WebSocket connection established")
+  upgrade(req) {
+    console.log("WebSocket connection established from:", (req as Request & { ip?: string }).ip)
   },
   open(peer) {
     peer.send({ user: "server", message: `Welcome ${peer}!` });

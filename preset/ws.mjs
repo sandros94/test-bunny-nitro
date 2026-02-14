@@ -345,22 +345,50 @@ const bunnyAdapter = (options = {}) => {
 	const globalPeers = /* @__PURE__ */ new Map();
 	return {
 		...adapterUtils(globalPeers),
-		handleUpgrade: async (request) => {
+		handleUpgrade: async (request, denoInfo = {}) => {
 			const { endResponse, context, namespace, upgradeHeaders } = await hooks.upgrade(request);
 			if (endResponse) return endResponse;
-			const headers = upgradeHeaders instanceof Headers ? upgradeHeaders : new Headers(upgradeHeaders);
+			const negotiatedProtocol = (upgradeHeaders instanceof Headers ? upgradeHeaders : new Headers(upgradeHeaders)).get("sec-websocket-protocol") ?? options.protocol;
+			if (!request.upgradeWebSocket && typeof Deno !== "undefined") {
+				const upgrade = Deno.upgradeWebSocket(request, { protocol: negotiatedProtocol ?? "" });
+				const peers = getPeers(globalPeers, namespace);
+				const peer = new BunnyPeer({
+					ws: upgrade.socket,
+					request,
+					namespace,
+					remoteAddress: denoInfo.remoteAddr?.hostname,
+					peers,
+					context
+				});
+				peers.add(peer);
+				upgrade.socket.addEventListener("open", () => {
+					hooks.callHook("open", peer);
+				});
+				upgrade.socket.addEventListener("message", (event) => {
+					hooks.callHook("message", peer, new Message(event.data, peer, event));
+				});
+				upgrade.socket.addEventListener("close", () => {
+					peers.delete(peer);
+					hooks.callHook("close", peer, {});
+				});
+				upgrade.socket.addEventListener("error", (error) => {
+					hooks.callHook("error", peer, new WSError(error));
+				});
+				return upgrade.response;
+			}
 			const upgradeOptions = {};
-			const negotiatedProtocol = headers.get("sec-websocket-protocol") ?? options.protocol;
 			if (negotiatedProtocol) upgradeOptions.protocol = negotiatedProtocol;
 			if (options.idleTimeout !== void 0) upgradeOptions.idleTimeout = options.idleTimeout;
 			const { response, socket } = request.upgradeWebSocket(Object.keys(upgradeOptions).length > 0 ? upgradeOptions : void 0);
+			const remoteAddress = request.headers.get("x-forwarded-for")?.split(",").shift()?.trim() || request.headers.get("x-real-ip") || void 0;
 			const peers = getPeers(globalPeers, namespace);
 			const peer = new BunnyPeer({
 				ws: socket,
 				request,
+				namespace,
+				remoteAddress,
 				peers,
-				context,
-				namespace
+				context
 			});
 			peers.add(peer);
 			socket.addEventListener("open", () => {
@@ -385,6 +413,9 @@ const bunnyAdapter = (options = {}) => {
 };
 var bunny_default = bunnyAdapter;
 var BunnyPeer = class extends Peer {
+	get remoteAddress() {
+		return this._internal.remoteAddress;
+	}
 	send(data) {
 		return this._internal.ws.send(toBufferLike(data));
 	}
