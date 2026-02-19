@@ -20,7 +20,7 @@ if (import.meta._websocket) {
   const { handleUpgrade } = wsAdapter({ resolve: resolveWebsocketHooks });
   _fetch = (req: ServerRequest) => {
     if (req.headers.get("upgrade") === "websocket") {
-      return handleUpgrade(req, req.ip ? { remoteAddr: { hostname: req.ip } } : {});
+      return handleUpgrade(req);
     }
     return nitroApp.fetch(req);
   };

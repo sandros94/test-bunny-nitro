@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@formisch/preact':
+        specifier: ^0.9.2
+        version: 0.9.2(@preact/signals@2.8.0(preact@10.28.3))(preact@10.28.3)(typescript@5.9.3)(valibot@1.2.0(typescript@5.9.3))
       valibot:
         specifier: ^1.2.0
         version: 1.2.0(typescript@5.9.3)
@@ -20,10 +23,10 @@ importers:
         version: 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
       crossws:
         specifier: ^0.4.4
-        version: 0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)
+        version: 0.4.4(srvx@0.11.7)
       h3:
         specifier: 2.0.1-rc.14
-        version: 2.0.1-rc.14(crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f))
+        version: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.7))
       nitro:
         specifier: https://pkg.pr.new/nitrojs/nitro@f663e76
         version: https://pkg.pr.new/nitrojs/nitro@f663e76(jiti@2.6.1)(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1))
@@ -34,8 +37,8 @@ importers:
         specifier: ^6.6.5
         version: 6.6.5(preact@10.28.3)
       srvx:
-        specifier: https://pkg.pr.new/h3js/srvx@1c4195f
-        version: https://pkg.pr.new/h3js/srvx@1c4195f
+        specifier: ^0.11.7
+        version: 0.11.7
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
@@ -306,6 +309,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@formisch/preact@0.9.2':
+    resolution: {integrity: sha512-4yrmU0XcYdETrrlgZECkNPxS4c1FisHHqQkGIgfFcOdkvpcyCj2f+0mc0/Ab04d0X0a8/dlv8V6ZomdwNRh74A==}
+    peerDependencies:
+      '@preact/signals': ^2.0.0
+      preact: ^10.0.0
+      typescript: '>=5'
+      valibot: ^1.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -333,6 +347,14 @@ packages:
     peerDependencies:
       '@babel/core': 7.x
       vite: 2.x || 3.x || 4.x || 5.x || 6.x || 7.x
+
+  '@preact/signals-core@1.13.0':
+    resolution: {integrity: sha512-slT6XeTCAbdql61GVLlGU4x7XHI7kCZV5Um5uhE4zLX4ApgiiXc0UYFvVOKq06xcovzp7p+61l68oPi563ARKg==}
+
+  '@preact/signals@2.8.0':
+    resolution: {integrity: sha512-lcILM82mei8s/53n2M6uZlrDHLlgLld8Squ0PVSUL5Ae1M45uEstWfHm+wcDqp2U5I/ZYrBvCY65udFyTo5OZw==}
+    peerDependencies:
+      preact: '>= 10.25.0 || >=11.0.0-0'
 
   '@prefresh/babel-plugin@0.5.2':
     resolution: {integrity: sha512-AOl4HG6dAxWkJ5ndPHBgBa49oo/9bOiJuRDKHLSTyH+Fd9x00shTXpdiTj1W41l6oQIwUOAgJeHMn4QwIDpHkA==}
@@ -718,7 +740,6 @@ packages:
 
   crossws@0.4.4:
     resolution: {integrity: sha512-w6c4OdpRNnudVmcgr7brb/+/HmYjMQvYToO/oTrprTwxRUiom3LYWU1PMWuD006okbUWpII1Ea9/+kwpUfmyRg==}
-    version: 0.4.4
     peerDependencies:
       srvx: '>=0.7.1'
     peerDependenciesMeta:
@@ -827,7 +848,6 @@ packages:
 
   h3@2.0.1-rc.14:
     resolution: {integrity: sha512-163qbGmTr/9rqQRNuqMqtgXnOUAkE4KTdauiC9y0E5iG1I65kte9NyfWvZw5RTDMt6eY+DtyoNzrQ9wA2BfvGQ==}
-    version: 2.0.1-rc.14
     engines: {node: '>=20.11.1'}
     hasBin: true
     peerDependencies:
@@ -1123,14 +1143,8 @@ packages:
     resolution: {integrity: sha512-i5uvt8C3ikiWeNZSVZNWcfZPItFQOsYTUAOkcUPGd8DqDy1uOUikjt5dG+uRlwyvR108Fb9DOd4GvXfT0N2/uQ==}
     engines: {node: '>= 12'}
 
-  srvx@0.11.4:
-    resolution: {integrity: sha512-m/2p87bqWZ94xpRN06qNBwh0xq/D0dXajnvPDSHFqrTogxuTWYNP1UHz6Cf+oY7D+NPLY35TJAp4ESIKn0WArQ==}
-    engines: {node: '>=20.16.0'}
-    hasBin: true
-
-  srvx@https://pkg.pr.new/h3js/srvx@1c4195f:
-    resolution: {integrity: sha512-OzLc5lxCBkaXgdeuRCIgsmfytsXMWixlLEQRMwjFyQyTHEr+lx9WfXzCKkE7DzqCtL3nda//6T2VVF/iAdFAXw==, tarball: https://pkg.pr.new/h3js/srvx@1c4195f}
-    version: 0.11.4
+  srvx@0.11.7:
+    resolution: {integrity: sha512-p9qj9wkv/MqG1VoJpOsqXv1QcaVcYRk7ifsC6i3TEwDXFyugdhJN4J3KzQPZq2IJJ2ZCt7ASOB++85pEK38jRw==}
     engines: {node: '>=20.16.0'}
     hasBin: true
 
@@ -1524,6 +1538,14 @@ snapshots:
   '@esbuild/win32-x64@0.27.3':
     optional: true
 
+  '@formisch/preact@0.9.2(@preact/signals@2.8.0(preact@10.28.3))(preact@10.28.3)(typescript@5.9.3)(valibot@1.2.0(typescript@5.9.3))':
+    dependencies:
+      '@preact/signals': 2.8.0(preact@10.28.3)
+      preact: 10.28.3
+      valibot: 1.2.0(typescript@5.9.3)
+    optionalDependencies:
+      typescript: 5.9.3
+
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1568,6 +1590,13 @@ snapshots:
       - preact
       - rollup
       - supports-color
+
+  '@preact/signals-core@1.13.0': {}
+
+  '@preact/signals@2.8.0(preact@10.28.3)':
+    dependencies:
+      '@preact/signals-core': 1.13.0
+      preact: 10.28.3
 
   '@prefresh/babel-plugin@0.5.2': {}
 
@@ -1822,9 +1851,9 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f):
+  crossws@0.4.4(srvx@0.11.7):
     optionalDependencies:
-      srvx: https://pkg.pr.new/h3js/srvx@1c4195f
+      srvx: 0.11.7
 
   css-select@5.2.2:
     dependencies:
@@ -1915,12 +1944,12 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  h3@2.0.1-rc.14(crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)):
+  h3@2.0.1-rc.14(crossws@0.4.4(srvx@0.11.7)):
     dependencies:
       rou3: 0.7.12
-      srvx: 0.11.4
+      srvx: 0.11.7
     optionalDependencies:
-      crossws: 0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)
+      crossws: 0.4.4(srvx@0.11.7)
 
   he@1.2.0: {}
 
@@ -2052,15 +2081,15 @@ snapshots:
   nitro@https://pkg.pr.new/nitrojs/nitro@f663e76(jiti@2.6.1)(rollup@4.57.1)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)):
     dependencies:
       consola: 3.4.2
-      crossws: 0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f)
+      crossws: 0.4.4(srvx@0.11.7)
       db0: 0.3.4
-      h3: 2.0.1-rc.14(crossws@0.4.4(srvx@https://pkg.pr.new/h3js/srvx@1c4195f))
+      h3: 2.0.1-rc.14(crossws@0.4.4(srvx@0.11.7))
       hookable: 6.0.1
       nf3: 0.3.10
       ofetch: 2.0.0-alpha.3
       ohash: 2.0.11
       rolldown: 1.0.0-rc.3
-      srvx: 0.11.4
+      srvx: 0.11.7
       unenv: 2.0.0-rc.24
       unstorage: 2.0.0-alpha.5(db0@0.3.4)(ofetch@2.0.0-alpha.3)
     optionalDependencies:
@@ -2193,9 +2222,7 @@ snapshots:
 
   source-map@0.7.6: {}
 
-  srvx@0.11.4: {}
-
-  srvx@https://pkg.pr.new/h3js/srvx@1c4195f: {}
+  srvx@0.11.7: {}
 
   stack-trace@1.0.0-pre2: {}
 
